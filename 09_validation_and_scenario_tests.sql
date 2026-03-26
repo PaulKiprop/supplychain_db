@@ -221,11 +221,11 @@ FROM vw_supplier_product_coverage
 ORDER BY linked_stock_value DESC;
 
 -- -------------------------------------------------------
--- 8) Negative test (this is expected to fail)
+-- 8) Negative test 
 -- -------------------------------------------------------
--- CALL sp_change_order_status('ORD-2026-9001', 'PENDING', 'Invalid reverse transition', 'QA_USER');
--- UPDATE inventory SET quantity = -1 WHERE warehouse_id = 4 AND product_id = 6;
--- CALL sp_add_order_item('ORD-2026-9001', 6, 9999, NULL); -- insufficient stock -> error + procurement request
+CALL sp_change_order_status('ORD-2026-9001', 'PENDING', 'Invalid reverse transition', 'QA_USER');
+UPDATE inventory SET quantity = -1 WHERE warehouse_id = 4 AND product_id = 6;
+CALL sp_add_order_item('ORD-2026-9001', 6, 9999, NULL); -- insufficient stock -> error + procurement request
 
 -- -------------------------------------------------------
 -- 9) Cleanup: restore baseline state for repeatable reruns

@@ -1,18 +1,7 @@
 -- =============================================================
 -- Supply Chain Management System - Bulk Seed From CSV
 -- =============================================================
--- GitHub-friendly template version.
--- Update each file path below to match your local machine before running.
--- This loader keeps suppliers and warehouses as pre-seeded master data.
--- Recommended run order:
--- 00_database_setup.sql
--- 01_schema.sql
--- 02_insert_data.sql
--- 06_business_logic_procedures.sql
--- 07_triggers_and_audit.sql
---
--- Example path format:
--- /absolute/path/to/supplychain_db/seed_data/products.csv
+
 
 USE supply_chain_db;
 
